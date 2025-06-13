@@ -1,6 +1,6 @@
 ---
-title: "Reproducible Research"
-author: "Jenkins J B Kollie"
+title: "Reproducible Research Project 1"
+author: "Barnabas Jenkins Kollie"
 date: "2025-06-11"
 output: html_document
 ---
@@ -8,7 +8,7 @@ output: html_document
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
-
+                
 #Loading Libraries
 
 ```{r}
@@ -25,7 +25,7 @@ str(activity)
 ```
 
 What is mean total number of steps taken per day?
-Calculate the total number of steps taken per day
+1. Calculate the total number of steps taken per day
 ```{r}
 Steps_total_per_day <- aggregate(steps~date, activity, sum)
 head(Steps_total_per_day)

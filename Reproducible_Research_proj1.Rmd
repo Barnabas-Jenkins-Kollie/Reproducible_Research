@@ -27,8 +27,8 @@ str(activity)
 What is mean total number of steps taken per day?
 Calculate the total number of steps taken per day
 ```{r}
-Step_total_per_day <- aggregate(steps~date, activity, sum)
-head(Step_total_per_day)
+Steps_total_per_day <- aggregate(steps~date, activity, sum)
+head(Steps_total_per_day)
 ```
 
 ```{r}
@@ -39,7 +39,7 @@ head(mean_per_day, 10)
 2. Make a histogram of the total number of steps taken each day
 
 ```{r}
-hist(totalbyday$steps,
+hist(Steps_total_per_day$steps,
      col = "orange",
      main = "Total Number of Steps Taken Each Day", 
      xlab =  "Steps",
@@ -52,13 +52,13 @@ hist(totalbyday$steps,
 3a. mean calculation
 
 ```{r}
-mean_of_steps <- mean(totalbyday$steps)
+mean_of_steps <- mean(Steps_total_per_day$steps)
 print(mean_of_steps)
 ```
 
 3b. median calculation
 ```{r}
-median_steps <- median(totalbyday$steps)
+median_steps <- median(Steps_total_per_day$steps)
 print(median_steps)
 ```
 
@@ -117,7 +117,7 @@ new_df <- activity
 
 ```{r}
 
-new_df[is.na(new_df)] <- 37.3826
+new_df[is.na(new_df)] <- mean_values
 head(new_df)
 
 ```
@@ -182,8 +182,7 @@ df2<-df %>%
     summarize(sumsteps=sum(steps))
 ```
 
-
-## `summarise()` regrouping output by 'dayofweek' (override with `.groups` argument)
+display of the data table after summarization
 ```{r}
 head(df2)
 ```
